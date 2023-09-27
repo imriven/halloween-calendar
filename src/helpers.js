@@ -1,21 +1,21 @@
-import Door1bkg from "./img/1.jpg"
-import Door2bkg from "./img/2.jpg"
-import Door3bkg from "./img/3.jpg"
-import Door4bkg from "./img/4.jpg"
-import Door5bkg from "./img/5.jpg"
-import Door6bkg from "./img/6.jpg"
-import Door7bkg from "./img/7.jpg"
-import Door8bkg from "./img/8.jpg"
-import Door9bkg from "./img/9.jpg"
-import Door10bkg from "./img/10.jpg"
+import Door1bkg from "./img/h1.jpg"
+import Door2bkg from "./img/h2.jpg"
+import Door3bkg from "./img/h3.jpg"
+import Door4bkg from "./img/h4.jpg"
+import Door5bkg from "./img/h5.jpg"
+import Door6bkg from "./img/h6.jpg"
+import Door7bkg from "./img/h7.jpg"
+import Door8bkg from "./img/h8.jpg"
+import Door9bkg from "./img/h9.jpg"
+import Door10bkg from "./img/h1.jpg"
 
-const shuffle = a => {
-    for (let i = a.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [a[i], a[j]] = [a[j], a[i]];
-    }
-    return a;
-  };
+// const shuffle = a => {
+//     for (let i = a.length - 1; i > 0; i--) {
+//       const j = Math.floor(Math.random() * (i + 1));
+//       [a[i], a[j]] = [a[j], a[i]];
+//     }
+//     return a;
+//   };
   
   export const hatchArray = [
     {
@@ -210,6 +210,63 @@ const shuffle = a => {
         "Why is it getting harder to buy Advent calendars? Their days are numbered!",
       open: false
     },
+    {
+      id: "hatch-25",
+      nr: 25,
+      img: Door4bkg,
+      text:
+        "Why is it getting harder to buy Advent calendars? Their days are numbered!",
+      open: false
+    },
+    {
+      id: "hatch-26",
+      nr: 26,
+      img: Door4bkg,
+      text:
+        "Why is it getting harder to buy Advent calendars? Their days are numbered!",
+      open: false
+    },
+    {
+      id: "hatch-27",
+      nr: 27,
+      img: Door4bkg,
+      text:
+        "Why is it getting harder to buy Advent calendars? Their days are numbered!",
+      open: false
+    },
+    {
+      id: "hatch-28",
+      nr: 28,
+      img: Door4bkg,
+      text:
+        "Why is it getting harder to buy Advent calendars? Their days are numbered!",
+      open: false
+    },
+    {
+      id: "hatch-29",
+      nr: 29,
+      img: Door4bkg,
+      text:
+        "Why is it getting harder to buy Advent calendars? Their days are numbered!",
+      open: false
+    },
+    {
+      id: "hatch-30",
+      nr: 30,
+      img: Door4bkg,
+      text:
+        "Why is it getting harder to buy Advent calendars? Their days are numbered!",
+      open: false
+    },
+    {
+      id: "hatch-31",
+      nr: 31,
+      img: Door4bkg,
+      text:
+        "Why is it getting harder to buy Advent calendars? Their days are numbered!",
+      open: false
+    },
+    
   ];
   
-  export const createCalendar = () => shuffle(hatchArray);
+  export const createCalendar = () => hatchArray;
