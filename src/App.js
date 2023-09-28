@@ -4,15 +4,13 @@ import styled from "styled-components";
 import { StyledApp } from "./AppStyles";
 import { createCalendar } from "./helpers";
 import Door from "./door";
-import Appbackground from "./img/haunted.jpg"
 import creak from "./snd/creak.mp3"
 import boo from "./snd/boo.mp3"
 import HVideo from "./vid/Halloween1.mp4"
-
+import Countdown from "react-countdown";
 
 const GlobalStyle = createGlobalStyle`
   body {
-    /* background: center / cover url(${Appbackground}); */
     margin: 0;
     background-color:black;
   }
@@ -20,10 +18,11 @@ const GlobalStyle = createGlobalStyle`
     display: flex;
     align-items: center;
     text-align: center;
+font-family: 'Rubik Moonrocks', cursive;
     z-index:2;
     color: white;
     text-shadow: 5px 5px 8px lime;
-    padding: 2%;
+    padding-top: 2%;
     width:95%;
     justify-content: center;
     font-size:3rem;
@@ -35,12 +34,32 @@ const GlobalStyle = createGlobalStyle`
 
 const VideoBackground = styled.div`
 display: flex;
-z-index: 1;
+z-index: -1;
 justify-content: center;
 flex-direction: column;
+position:top
 `
-
-
+const AwesomeTitleHeader = styled.h2`
+display:flex;
+z-index: 1;
+text-align:center;
+color: darkred;
+align-content:center;
+justify-content: center;
+text-shadow: 5px 5px 8px lime;
+padding:0;
+`
+const ContainerDiv = styled.div`
+text-decoration:none;
+display: flex;
+font-family: 'Pixelify Sans', cursive;
+flex-direction:column;
+flex-wrap: wrap;
+align-content:center;
+justify-content: center;
+text-align: center;
+width: 100%;
+`
 
 
 function App() {
@@ -60,7 +79,23 @@ function App() {
 
     doors.length && localStorage.setItem("calendar", JSON.stringify(doors));
   }, [doors]);
+  // Random component
+  const Completionist = () => <AwesomeTitleHeader>Happy Halloween!!!</AwesomeTitleHeader>;
 
+  // Renderer callback with condition
+  const renderer = ({ days, hours, minutes, seconds, completed }) => {
+    if (completed) {
+      // Render a complete state
+      return <Completionist />;
+    } else {
+      // Render a countdown
+      return (
+        <AwesomeTitleHeader>
+          {days} Days {hours} Hours {minutes} Minutes {seconds} Seconds Until Halloween
+        </AwesomeTitleHeader>
+      );
+    }
+  };
   const audio_creak = new Audio(creak)
   const audio_boo = new Audio(boo)
 
@@ -94,16 +129,24 @@ function App() {
           <source src={HVideo} type="video/mp4" />
         </video>
         <GlobalStyle />
-        <header>RockAGoth's Halloween Countdown Calendar</header>
-          <StyledApp>
-            {doors.map(door => (
-              <Door
-                key={door.id}
-                doorData={door}
-                handleClick={handleFlipDoor}
-              />
-            ))}
-          </StyledApp>
+        <ContainerDiv>
+          <header>RockAGoth's Halloween Countdown Calendar</header>
+          <AwesomeTitleHeader><a style={{color:"darkred"}} href="https://twitch.tv/rockagoth" target="blank">twitch.tv/rockagoth</a></AwesomeTitleHeader>
+          <AwesomeTitleHeader><Countdown style={{margin:"0"}}
+            date={new Date("2023", "9", "31")}
+            renderer={renderer}
+          />
+          </AwesomeTitleHeader>
+        </ContainerDiv>
+        <StyledApp>
+          {doors.map(door => (
+            <Door
+              key={door.id}
+              doorData={door}
+              handleClick={handleFlipDoor}
+            />
+          ))}
+        </StyledApp>
       </VideoBackground>
     </>
   );

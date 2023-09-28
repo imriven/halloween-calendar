@@ -17,11 +17,12 @@ export const StyledDoor = styled.div`
       display: flex;
       align-items: center;
       justify-content: center;
-      font-family: "Dancing Script", cursive;
+      font-family: 'Rubik Moonrocks', cursive;
       color: black;
       padding: 20px;
       width: 50%;
       height: 50%;
+
       /* border-radius: 50%;
       background: rgba(0, 0, 0, 0.7); */
       font-weight: 700;
@@ -39,8 +40,12 @@ export const StyledDoor = styled.div`
     z-index: 1;
     transition-duration: 4.5s;
     transform: rotateY(180deg);
+    a{
+      font-family: 'Pixelify Sans', cursive;
+      text-decoration:none;
+      color: white;
+    }
     p {
-      font-family:"Rubik Moonrocks", serif;
       color: black;
       padding: 10px;
       font-size: 1.2rem;
