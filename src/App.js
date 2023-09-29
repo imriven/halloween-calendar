@@ -102,7 +102,7 @@ function App() {
 
   const handleFlipDoor = id => {
     const date = new Date();
-    const month = 8
+    const month = 9
     // Change month back to 9
     if (parseInt(id.substring(6)) > date.getDate()) {
       return
@@ -131,7 +131,7 @@ function App() {
         <GlobalStyle />
         <ContainerDiv>
           <header>RockAGoth's Halloween Countdown Calendar</header>
-          <AwesomeTitleHeader><a style={{color:"darkred"}} href="https://twitch.tv/rockagoth" target="blank">twitch.tv/rockagoth</a></AwesomeTitleHeader>
+          <AwesomeTitleHeader><a style={{color:"darkred"}} href="https://rockagoth.com" target="blank">Rockagoth.com</a></AwesomeTitleHeader>
           <AwesomeTitleHeader><Countdown style={{margin:"0"}}
             date={new Date("2023", "9", "31")}
             renderer={renderer}

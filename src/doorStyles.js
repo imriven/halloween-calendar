@@ -43,7 +43,7 @@ export const StyledDoor = styled.div`
     a{
       font-family: 'Pixelify Sans', cursive;
       text-decoration:none;
-      color: white;
+      color: green;
     }
     p {
       color: black;
