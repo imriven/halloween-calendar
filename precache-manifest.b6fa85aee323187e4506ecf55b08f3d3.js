@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "4006b5b79bc0a033302e89c62d92fb94",
+    "revision": "5ab491ad1657f937f5bf8fd915217703",
     "url": "/halloween-calendar/index.html"
   },
   {
